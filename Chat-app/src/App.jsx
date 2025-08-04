@@ -1,17 +1,17 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Chats from "./pages/Chats";
 
 const App = () => {
   return (
     <div>
-      <nav className="bg-purple-600 text-white">
-        <ul className="flex px-10 py-3 space-x-4 justify-end">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">About</li>
-          <li className="cursor-pointer">Contact us</li>
-          <li className="cursor-pointer">Phone</li>
-        </ul>
-      </nav>
-      <div className="animate-bounce text-blue-600">Bouncing!</div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chats" element={<Chats />} />
+      </Routes>
     </div>
   );
 };
