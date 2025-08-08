@@ -3,10 +3,12 @@ import express from 'express'
 import dotenv from 'dotenv'
 import { chats } from './data/data.js';
 import cors from 'cors';
+import { connectDB } from './config/Db.js';
 
 //Intitialzing express and .env
 dotenv.config({quiet:true});
 const app = express();
+connectDB();
 
 //Connecting Backend and frontend without cors error 
 //*** Remember don't give a trailing / in origin ***
